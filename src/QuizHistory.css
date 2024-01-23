@@ -1,15 +1,16 @@
 
 
 .quiz-history-container {
+  margin-top: 90px;
   padding: 20px;
   box-shadow: 1px 5px 16px 0px rgba(185, 192, 191, 0.493);
-  /* background-color:rgb(154, 204, 218); */
+ 
 }
 
 .quiz-history {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
-  /* background-color:rgb(154, 204, 218); */
+
 
 }
 
@@ -17,7 +18,9 @@
   list-style: none;
   padding: 0;
   box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.459);
-  /* background-color:rgb(154, 204, 218); */
+  background-color:#f8f8f8;
+  max-height: 100vh;
+  overflow-y: scroll;
 
 }
 
@@ -26,7 +29,8 @@
   padding: 20px;
   transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   cursor: pointer;
-  /* background-color:rgb(154, 204, 218); */
+  margin: 10px;
+  background-color:#f8f8f8;
 
   
 
@@ -40,6 +44,8 @@
 
 .quiz-card.selected {
   background-color: #f8f8f8;
+  transition: 1s;
+
   
 }
 
@@ -54,12 +60,21 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+
 }
 
+
 .answers {
-  margin-top: 10px;
-  /* display: inline; */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 10s ease-in-out;
 }
+
+.quiz-card.selected .answers {
+  max-height: 1000px; 
+  transition: max-height 10s ease-in-out;
+}
+
 
 .answer {
   padding-top: 15px;
@@ -67,28 +82,74 @@
   border-radius: 4px;
 }
 
+
+
 .correct {
-  background-color: #81e78e;
-  /* padding: 8px; */
-  /* padding: 1px; */
+ 
+  content: '✔ ';
+  color: #0aa751;
+
   
 }
 
 .wrong {
-  background-color: #ffcdd2;
-  /* padding: 1px; */
+  
+
+  content: '✘ ';
+  color: #ff4646;
+  
+  
+ 
+}
+.question-text {
+  color: black; 
 }
 
-body{
-  /* background-color:rgb(167, 205, 214); */
-}
+
 .with-space{
-  /* display: flex; */
-  /* margin-top: -5.5%; */
+ 
   margin-left: 88%;
-  /* margin-block-end: -8px; */
   
 }
-.navbar{
-  /* background-color:rgb(154, 204, 218); */
+
+
+
+
+
+/* .quiz-history-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
+
+.quiz-history {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
+}
+
+.quiz-card {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.quiz-card:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.02);
+}
+
+.quiz-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.quiz-details {
+  color: #777;
+} */
